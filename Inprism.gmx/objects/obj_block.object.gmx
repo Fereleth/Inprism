@@ -61,12 +61,18 @@ else
     in_colour = false;
 //Picking up/carrying and dropping
 control_grab = keyboard_check_pressed(ord('X'));
-if control_grab = true and obj_player.carrying = self
-    if place_meeting(x+sprite_width,y,obj_solid) = false {
+if control_grab = true and obj_player.carrying = self {
+    var placement
+    if obj_player.facing_right = true
+        placement = x+sprite_width+obj_player.xspeed
+    else
+        placement = x-sprite_width+obj_player.xspeed
+    if place_meeting(placement,y,obj_solid) = false {
         carried = false
         obj_player.carrying = false
-        x+=sprite_width
+        x=placement
         }
+    }
 if control_grab = true and (place_meeting(x-1,y,obj_player) or place_meeting(x+1,y,obj_player)) and carried = false and obj_player.carrying = false
     obj_player.carrying = self
 //Movement    

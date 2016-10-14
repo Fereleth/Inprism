@@ -9,6 +9,7 @@
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_collision</sprite>
     <sprite>sprites\spr_block</sprite>
+    <sprite>sprites\spr_button</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

@@ -28,6 +28,7 @@
             <string>xspeed = 0
 yspeed = 0
 carrying = false
+facing_right = true
 </string>
           </argument>
         </arguments>
@@ -64,11 +65,17 @@ if xspeed &gt; 5
 if control_jump = true and place_meeting(x,y+1,obj_solid)
     yspeed=-10;
 
+//Determine facing
+if xspeed &gt; 0
+    facing_right = true;
+if xspeed &lt; 0
+    facing_right = false;
+
 //Horizontal friction
 if xspeed &gt; 0 and control_right = false
     xspeed-=1;
 if xspeed &lt; 0 and control_left = false
-    xspeed+=1;  
+    xspeed+=1;
 
 //Gravity
 yspeed += 1;
