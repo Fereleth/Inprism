@@ -3,11 +3,33 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>100</depth>
+  <depth>10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,12 +47,23 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_red)
-draw_rectangle(0,0,room_width/3,room_height,false)
-draw_set_color(c_green)
-draw_rectangle(room_width/3,0,room_width/3*2,room_height,false)
-draw_set_color(c_blue)
-draw_rectangle(room_width/3*2,0,room_width,room_height,false)
+            <string>//Visual effect of light splitting from prism
+draw_set_color(c_white);
+draw_line_width(0,0,x,y,3);
+draw_set_color(c_red);
+draw_triangle(x,y,obj_red_start.x,room_height,obj_green_start.x,room_height,false);
+draw_set_color(c_green);
+draw_triangle(x,y,obj_green_start.x,room_height,obj_blue_start.x,room_height,false);
+draw_set_color(c_blue);
+draw_triangle(x,y,obj_blue_start.x,room_height,room_width,room_height,false);
+
+//Light in background
+draw_set_color(c_red);
+draw_rectangle(obj_red_start.x,0,obj_green_start.x,room_height,false);
+draw_set_color(c_green);
+draw_rectangle(obj_green_start.x,0,obj_blue_start.x,room_height,false);
+draw_set_color(c_blue);
+draw_rectangle(obj_blue_start.x,0,room_width,room_height,false);
 </string>
           </argument>
         </arguments>
