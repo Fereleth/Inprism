@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>colour = c_white
-puzzle_id = 0
+            <string>colour_determine()
 </string>
           </argument>
         </arguments>
@@ -55,11 +54,11 @@ var block
 block = instance_place(x,y,obj_block)
 if block != noone {
     if block.colour = colour {
-        global.puzzle[puzzle_id] = true;
+        global.puzzle[colour] = true;
         image_index = 1
     }
 } else {
-    global.puzzle[puzzle_id] = false;
+    global.puzzle[colour] = false;
     image_index = 0
 }
 </string>

@@ -19,6 +19,9 @@
     <background>background\tiles_basic</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\colour_determine.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_solid</object>
@@ -31,7 +34,8 @@
     <object>objects\obj_platform</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\level_one</room>
+    <room>rooms\level_two</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

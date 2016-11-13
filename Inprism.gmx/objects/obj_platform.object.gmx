@@ -8,6 +8,29 @@
   <parentName>obj_solid</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>colour_determine()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,22 +48,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if x &gt;= obj_red_start.x and x &lt; obj_green_start.x
-    colour = c_red
-else if x &gt;= obj_green_start.x and x &lt; obj_blue_start.x
-    colour = c_green
-else if x &gt;= obj_blue_start.x
-    colour = c_blue
-else
-    colour = c_black
-
-if global.puzzle[puzzle_id] = true {
-    image_blend = colour
-    solid = true
+            <string>if global.puzzle[colour] = true {
+    image_blend = c_white;
+    solid = true;
 }
 else {
-    image_blend = c_white
-    solid = false
+    image_blend = colour;
+    solid = false;
 }
 </string>
           </argument>
